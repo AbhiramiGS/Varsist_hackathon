@@ -1,10 +1,9 @@
-import { authRouter } from "./router/auth";
-import { postRouter } from "./router/post";
+import { springRouter } from "./router/spring";
 import { createTRPCRouter } from "./trpc";
 
 export const appRouter = createTRPCRouter({
-  auth: authRouter,
-  post: postRouter,
+
+  spring: springRouter
 });
 
 // export type definition of API
