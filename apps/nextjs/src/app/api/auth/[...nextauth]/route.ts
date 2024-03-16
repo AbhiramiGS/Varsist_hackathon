@@ -2,11 +2,11 @@ import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-import { GET as DEFAULT_GET, POST } from "@acme/auth";
+import { GET as DEFAULT_GET, POST } from "@springapp/auth";
 
 export const runtime = "edge";
 
-const EXPO_COOKIE_NAME = "__acme-expo-redirect-state";
+const EXPO_COOKIE_NAME = "__springapp-expo-redirect-state";
 const AUTH_COOKIE_PATTERN = /authjs\.session-token=([^;]+)/;
 
 const getToken = (res: Response) => {
