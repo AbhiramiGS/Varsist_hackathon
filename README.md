@@ -5,7 +5,7 @@
     ⭐️Sprinshed mapping, monitoring and management  ⭐️ <br>
 </h1>
 
-# [`Demo video link`](https://www.youtube.com/watch?v=TegxlW0r4Ro)
+# [`Demo video link`](https://www.youtube.com/watch?v=1eoNMsBTqDY)
 
 Our project introduces an innovative approach to mapping, monitoring, and managing springsheds by seamlessly integrating hardware and software components. Through this platform, data collection from designated hardware sources is streamlined, enabling thorough analysis of water quality characteristics within the springshed while adhering to standard quality metrics. Detailed reports are easily accessible through a user-friendly interface, empowering stakeholders to make informed decisions and take appropriate actions. This system not only enhances the monitoring process but also contributes to effective springshed management, addressing the critical need for water resource governance. Additionally, our system features an alarm system that swiftly responds to natural calamities or deviations in readings, facilitating proactive decision-making to mitigate potential risks.
 
