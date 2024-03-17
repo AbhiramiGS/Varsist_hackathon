@@ -34,9 +34,9 @@ import {
           return [key, value];
         },
       );
-      console.log(" ==================== ");
-      console.log("ALL DATA", allData);
-      console.log(" ==================== ");
+      
+      
+      
   
       const temperature: { date: string; temperature: number }[] = [];
   
@@ -65,9 +65,9 @@ import {
           return [key, value];
         },
       );
-      console.log(" ==================== ");
-      console.log("ALL DATA", allData);
-      console.log(" ==================== ");
+      
+      
+      
   
       const ph: { date: string; ph: number }[] = [];
   
@@ -96,9 +96,9 @@ import {
           return [key, value];
         },
       );
-      console.log(" ==================== ");
-      console.log("ALL DATA", allData);
-      console.log(" ==================== ");
+      
+      
+      
   
       const turbidity: { date: string; turbidity: number }[] = [];
   
@@ -127,9 +127,9 @@ import {
           return [key, value];
         },
       );
-      console.log(" ==================== ");
-      console.log("ALL DATA", allData);
-      console.log(" ==================== ");
+      
+      
+      
   
       const tds: { date: string; tds: number }[] = [];
   
@@ -158,9 +158,9 @@ import {
           return [key, value];
         },
       );
-      console.log(" ==================== ");
-      console.log("ALL DATA", allData);
-      console.log(" ==================== ");
+      
+      
+      
   
       const doValue: { date: string; do: number }[] = [];
   

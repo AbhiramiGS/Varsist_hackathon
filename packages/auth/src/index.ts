@@ -1,9 +1,9 @@
 import type { DefaultSession } from "next-auth";
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import NextAuth from "next-auth";
-import Discord from "next-auth/providers/discord";
-
-import { db, tableCreator } from "@springapp/db";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { prisma } from "@springapp/db";
+import GoogleProvider from "next-auth/providers/google";
+import { env } from "../env";
 
 export type { Session } from "next-auth";
 
@@ -21,19 +21,54 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
-  adapter: DrizzleAdapter(db, tableCreator),
-  providers: [Discord],
   callbacks: {
-    session: (opts) => {
-      if (!("user" in opts)) throw "unreachable with session strategy";
-
+    jwt: async ({ token, user }) => {
+      const dbUser = await prisma.user.findUnique({
+        where: { id: user.id },
+      });
+      if (!dbUser) {
+        token.id = user.id;
+        return token;
+      }
       return {
-        ...opts.session,
-        user: {
-          ...opts.session.user,
-          id: opts.user.id,
-        },
+        id: dbUser.id,
+        name: dbUser.name,
+        email: dbUser.email,
+        picture: dbUser.image,
       };
     },
+
+    session: ({ session, user }) => ({
+      ...session,
+      user: {
+        ...session.user,
+        id: user.id,
+      },
+    }),
+
+    redirect: () => {
+      return "/admin/dashboard";
+    },
   },
+  pages: {
+    signIn: "/admin/login",
+  },
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  adapter: PrismaAdapter(prisma),
+  providers: [
+    GoogleProvider({
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
+    }),
+    /**
+     * ...add more providers here.
+     *
+     * Most other providers require a bit more work than the Discord provider. For example, the
+     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
+     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
+     *
+     * @see https://next-auth.js.org/providers/github
+     */
+  ],
 });
