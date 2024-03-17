@@ -34,10 +34,13 @@ This innovative approach signifies a departure from conventional methods, foster
 
 ## How to run locally 
 To run the project locally,
-- step 1 : clone the repo 
+- Step 1: Clone the repo
+- Step 2: Creat the .env file by `cp .env.example .env`
+- Step 3:  
 ```
-npm install
-npm start
+pnpm install
+pnpm db:push
+pnpm dev
 ```
 
 # What's next ?
