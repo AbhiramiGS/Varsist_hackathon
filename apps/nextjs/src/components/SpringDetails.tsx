@@ -129,7 +129,7 @@ const SpringDetails = () => {
                       width={230}
                       height={150}
                     />
-                    {/* <Card>
+                    <Card>
                       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">
                           Temperature
@@ -139,11 +139,9 @@ const SpringDetails = () => {
                         <div className="text-2xl font-bold">
                           {wqDetails.data?.TEMPERATURE} <span className="text-sm">°C</span>
                         </div>
-                        {/* <p className="text-xs text-muted-foreground">
-                          +5.7% from last month
-                        </p> */}
-                    {/* </CardContent>
-                    </Card> */}
+                        
+                    </CardContent>
+                    </Card>
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -180,10 +178,10 @@ const SpringDetails = () => {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-5">
+              {/* <AccordionItem value="item-5">
                 <AccordionTrigger>Water Flow Analysis</AccordionTrigger>
                 <AccordionContent></AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </div>
           <div className="mt-4 hidden md:flex ">
